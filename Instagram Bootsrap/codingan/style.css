@@ -1,0 +1,609 @@
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+/* ===================================
+   DESKTOP SIDEBAR
+   =================================== */
+.desktop-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 245px;
+    height: 100vh;
+    background: white;
+    border-right: 1px solid #dbdbdb;
+    z-index: 1000;
+    overflow-y: auto;
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .desktop-sidebar {
+        display: block;
+    }
+    
+    .main-content {
+        margin-left: 245px;
+    }
+    
+    .mobile-header {
+        display: none !important;
+    }
+
+    body {
+        padding-bottom: 0;
+    }
+}
+
+.sidebar-brand {
+    padding: 24px 12px 24px 16px;
+}
+
+.instagram-logo {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin: 4px 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 12px 12px 16px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+}
+
+.sidebar-nav a:hover {
+    background-color: #f2f2f2;
+}
+
+.sidebar-nav a.active {
+    font-weight: 600;
+}
+
+.sidebar-nav i {
+    width: 24px;
+    margin-right: 16px;
+    font-size: 24px;
+}
+
+.sidebar-more {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+}
+
+.sidebar-more a {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    color: #000;
+    text-decoration: none;
+}
+
+.sidebar-more a i {
+    width: 24px;
+    margin-right: 16px;
+    font-size: 24px;
+}
+
+/* ===================================
+   MOBILE HEADER
+   =================================== */
+.mobile-header {
+    background: white;
+    border-bottom: 1px solid #dbdbdb;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-username {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* ===================================
+   MAIN CONTENT
+   =================================== */
+.main-content {
+    background: white;
+    min-height: calc(100vh - 60px);
+}
+
+@media (min-width: 992px) {
+    .main-content {
+        min-height: 100vh;
+    }
+}
+
+.profile-container {
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+@media (max-width: 767px) {
+    .profile-container {
+        padding: 16px;
+    }
+}
+
+/* ===================================
+   PROFILE SECTION
+   =================================== */
+.profile-header {
+    display: flex;
+    margin-bottom: 44px;
+}
+
+@media (max-width: 767px) {
+    .profile-header {
+        margin-bottom: 24px;
+    }
+}
+
+.profile-image-wrapper {
+    flex: 0 0 auto;
+    margin-right: 30px;
+}
+
+@media (min-width: 768px) {
+    .profile-image-wrapper {
+        margin-right: 80px;
+    }
+}
+
+.profile-img {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+}
+
+@media (min-width: 768px) {
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-username {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.username-text {
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-custom {
+    background: #efefef;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-custom:hover {
+    background: #dbdbdb;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .profile-stats {
+        display: none;
+    }
+}
+
+.stat-item {
+    font-size: 16px;
+}
+
+.stat-item strong {
+    font-weight: 600;
+}
+
+.profile-bio {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.bio-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.bio-text {
+    color: #262626;
+}
+
+/* ===================================
+   MOBILE STATS
+   =================================== */
+.mobile-stats {
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 12px 0;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .mobile-stats {
+        display: none;
+    }
+}
+
+.mobile-stat-item {
+    flex: 1;
+}
+
+.mobile-stat-value {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.mobile-stat-label {
+    color: #737373;
+    font-size: 12px;
+}
+
+/* ===================================
+   STORIES HIGHLIGHTS
+   =================================== */
+.stories-container {
+    margin-bottom: 44px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.stories-wrapper {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 8px;
+}
+
+.story-item {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.story-circle {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 50%;
+    padding: 2px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.story-circle:hover {
+    transform: scale(1.05);
+}
+
+.story-inner {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.story-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.story-label {
+    font-size: 12px;
+    color: #262626;
+    max-width: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.add-story-btn {
+    width: 64px;
+    height: 64px;
+    border: 2px dashed #dbdbdb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+}
+
+.add-story-btn:hover {
+    border-color: #b4b4b4;
+    transform: scale(1.05);
+}
+
+.add-story-btn i {
+    color: #737373;
+    font-size: 20px;
+}
+
+/* ===================================
+   PROFILE TABS
+   =================================== */
+.profile-tabs {
+    border-top: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.tab-item {
+    flex: 0 0 auto;
+    padding: 12px 0;
+    margin: 0 30px;
+    border-top: 1px solid transparent;
+    margin-top: -1px;
+    cursor: pointer;
+    color: #8e8e8e;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.tab-item:hover {
+    color: #262626;
+}
+
+.tab-item.active {
+    border-top-color: #262626;
+    color: #262626;
+}
+
+.tab-item i {
+    font-size: 12px;
+}
+
+/* ===================================
+   POSTS GRID
+   =================================== */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    margin-top: 0;
+}
+
+@media (min-width: 992px) {
+    .posts-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+    }
+}
+
+.post-item {
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #f2f2f2;
+}
+
+.post-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.post-item:hover img {
+    transform: scale(1.05);
+}
+
+.post-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.post-item:hover .post-overlay {
+    opacity: 1;
+}
+
+.post-stats {
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.post-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===================================
+   BOTTOM NAVIGATION
+   =================================== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    z-index: 999;
+}
+
+@media (min-width: 992px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+.bottom-nav a {
+    color: #262626;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: color 0.2s ease;
+}
+
+.bottom-nav a:hover {
+    color: #737373;
+}
+
+.bottom-nav a.active {
+    color: #0095f6;
+}
+
+.bottom-nav i {
+    font-size: 24px;
+}
+
+/* ===================================
+   SCROLLBAR STYLING
+   =================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c7c7c7;
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+@media (max-width: 767px) {
+    .profile-actions {
+        width: 100%;
+    }
+
+    .btn-custom {
+        flex: 1;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .profile-username {
+        margin-bottom: 12px;
+    }
+
+    .username-text {
+        font-size: 18px;
+    }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.gap-3 {
+    gap: 1rem;
+}
