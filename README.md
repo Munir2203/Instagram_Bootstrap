@@ -1,4 +1,3 @@
-[README.MD](https://github.com/user-attachments/files/22631600/README.MD)
 # Profil Feed Bootstrap
 
 Project ini adalah implementasi halaman profil sederhana menyerupai Instagram menggunakan **Bootstrap 5.3**.  
